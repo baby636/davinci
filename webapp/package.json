@@ -39,7 +39,9 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "lint-staged": {
     "*.js": [
@@ -114,7 +116,8 @@
     "slate-react": "^0.57.1",
     "three": "^0.101.1",
     "ua-parser-js": "^0.7.20",
-    "warning": "4.0.2"
+    "warning": "4.0.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/cli": "7.4.3",
@@ -222,5 +225,6 @@
     "webpack-hot-middleware": "2.24.3",
     "webpack-pwa-manifest": "^4.2.0",
     "whatwg-fetch": "3.0.0"
-  }
+  },
+  "snyk": true
 }
